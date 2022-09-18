@@ -1,0 +1,10 @@
+.form {
+    width: 100%;
+    padding: 16px;
+    border-radius: 10px;
+    border: 2px solid #eff0f6;
+    font-size: 18px;
+}
+.error {
+    color: #db2269;
+}

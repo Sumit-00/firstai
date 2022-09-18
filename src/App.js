@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import { BrowserRouter as Router } from "react-router-dom";
+import { globalStyles } from "../src/shared/styles/global";
+import theme from "../src/shared/styles/theme";
+
+import { createBrowserHistory } from "history";
+
+import Routes from "./pages/Router/routes";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const history = createBrowserHistory();
+    return (
+        <ThemeProvider theme={theme}>
+            {globalStyles}
+            <CssBaseline />
+            <Router history={history}>
+                <Routes />
+            </Router>
+        </ThemeProvider>
+    );
 }
 
 export default App;
