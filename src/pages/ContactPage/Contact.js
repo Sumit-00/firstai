@@ -1,3 +1,5 @@
+/* eslint-disable no-useless-escape */
+
 import React from "react";
 import AppBar from "@mui/material/AppBar";
 import { Stack } from "@mui/material";
