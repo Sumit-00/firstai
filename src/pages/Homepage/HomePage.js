@@ -27,17 +27,17 @@ const pages = ["Products", "Pricing", "Resources", "Contact Us"];
 const platforms = [
     {
         name: "Facebook Ads",
-        text: "We have designed logo for 100+ brands and company with great design outcome.",
+        text: "India is expected to spend Rs 28,249 crore by 2022 on Facebook ads. Run Ads on Facebook and Instagram to increase awareness amongst niche audiences. Run dynamic Brand awareness and retargeting campaign ads to increase sales.",
         icon: Meta,
     },
     {
         name: "Google Ads",
-        text: "We’ve completed 50+ app and 30+ websites design for the startups and company.",
+        text: "The average business spends anywhere from $12,000 to $120,000 per year. At First AI, we offer you assured results month on month with smart spends, calculated optimisation and minimum efforts.",
         icon: Adwords,
     },
     {
         name: "Snapchat Ads",
-        text: "We design packaging for your products and we have finished 30+ packaging designs.",
+        text: "Snapchat generated a revenue of US$911 million by the end of 2020. More than half the revenue was contributed by  commercial ad spends on the platform. Inspire action from people who matter to your business with a public profile made exclusively for your business. Run ads that impact and make a difference for your business.",
         icon: Package,
     },
 ];
@@ -46,32 +46,32 @@ const secretWeapon = [
     {
         icon: Launch,
         title: "Enterprise",
-        text: "We have designed logo for 100+ brands and company with great design outcome.",
+        text: "Our Ad budgets don’t limit. Enterprises can use First AI to create optimized ads that help them reap benefits from minimum spends.",
     },
     {
         icon: Creativity,
         title: "Agency",
-        text: "We have designed logo for 100+ brands and company with great design outcome.",
+        text: "Running multi-platform Advertisements for multiple clients takes abundance of time and resources. Cut back on spending with our AI support.",
     },
     {
         icon: Cart,
         title: "E-commerce",
-        text: "We have designed logo for 100+ brands and company with great design outcome.",
+        text: "To ensure ecommerce sales picks up, sellers need to understand the visitors at every milestone, visitors who checkout but don't complete transactions. This data helps the sellers to understand flaws and UI distractions at every level.",
     },
     {
         icon: Install,
         title: "App install",
-        text: "We have designed logo for 100+ brands and company with great design outcome.",
+        text: "Apps need to be marketed to ensure downloads from app stores. Use our AI tools to smartly assess how, when and to whom to market the app downloads.",
     },
     {
         icon: Saas,
         title: "SaaS",
-        text: "We have designed logo for 100+ brands and company with great design outcome.",
+        text: "Major SaaS companies own multiple products and managing ads individually for each product is tedious. Our AI powered dashboard allows you to manage all products across all channels.",
     },
     {
         icon: Building,
         title: "Real-Estate",
-        text: "We have designed logo for 100+ brands and company with great design outcome.",
+        text: "AI powered dashboard help realtors to see the traction obtained on different ads placed across different sites and projects for multiple regions. The one stop destination to see your live progress.",
     },
 ];
 
@@ -132,7 +132,7 @@ const HomePage = () => {
                                 </Button>
                             ))}
                         </Box>
-                        <Stack direction="row" alignItem="center" spacing={1}>
+                        <Stack direction="row" alignItems="center" spacing={1}>
                             <Button
                                 onClick={() => navigate("/contact-us")}
                                 variant="contained"
@@ -469,8 +469,12 @@ const HomePage = () => {
                                 color="#585C65"
                                 fontSize={["2rem"]}
                             >
-                                Design agency that stand strong <br /> for 5
-                                years to help company.
+                                First AI is a smart result driven AI engine
+                                <br /> that helps to grow your investments on
+                                Ads. <br />
+                                First AI is all about optimization of Ads every
+                                <br />
+                                minute of every day making them reap benefits.
                             </Typography>
                             <Stack direction="row" alignItems="center">
                                 <Box
@@ -478,13 +482,6 @@ const HomePage = () => {
                                     sx={{ width: "5rem" }}
                                     alt="FB icon"
                                     src={FbIcon}
-                                    mr="3rem"
-                                />
-                                <Box
-                                    component="img"
-                                    sx={{ width: "5rem" }}
-                                    alt="Twitter Icon"
-                                    src={Twitter}
                                     mr="3rem"
                                 />
                                 <Box
