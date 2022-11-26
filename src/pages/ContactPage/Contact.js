@@ -8,21 +8,12 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
-import FbIcon from "../../Images/fb.svg";
-import Twitter from "../../Images/twitter.svg";
-import Instagram from "../../Images/instagram.svg";
+
 import "./style.css";
 
-const pages = ["Products", "Pricing", "Resources", "Contact Us"];
+import Footer from "../../Components/Footer";
 
-const footer = [
-    { name: "Services", subLink: ["Logo", "UI/UX", "Packaging", "Request"] },
-    { name: "Contact", subLink: ["About Us", "Teams", "Profile", "FAQ"] },
-    {
-        name: "Legals",
-        subLink: ["Privacy", "Disclaimer", "Terms", "Company"],
-    },
-];
+const pages = ["Products", "Pricing", "Resources", "Contact Us"];
 
 const validEmailRegex = RegExp(
     /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
@@ -57,6 +48,10 @@ function Contact() {
             console.error("Invalid Form");
         }
     };
+
+    React.useEffect(() => {
+        window.scroll(0, 0);
+    }, []);
 
     return (
         <>
@@ -224,87 +219,7 @@ function Contact() {
                     </Stack>
                 </Container>
             </Box>
-            <Box sx={{ bgcolor: "#EFF0F6", pb: "6rem", pt: "6rem" }}>
-                <Container maxWidth="xl">
-                    <Stack
-                        direction="row"
-                        alignItems="center"
-                        justifyContent="space-between"
-                    >
-                        <Stack>
-                            <Typography
-                                fontSize={["3.6rem"]}
-                                sx={{
-                                    color: "#191D38",
-                                    display: { xs: "none", md: "flex" },
-                                    fontWeight: 900,
-                                    textDecoration: "none",
-                                    pb: "6rem",
-                                }}
-                            >
-                                First Ai
-                            </Typography>
-                            <Typography
-                                pb="4rem"
-                                color="#585C65"
-                                fontSize={["2rem"]}
-                            >
-                                Design agency that stand strong <br /> for 5
-                                years to help company.
-                            </Typography>
-                            <Stack direction="row" alignItems="center">
-                                <Box
-                                    component="img"
-                                    sx={{ width: "5rem" }}
-                                    alt="FB icon"
-                                    src={FbIcon}
-                                    mr="3rem"
-                                />
-                                <Box
-                                    component="img"
-                                    sx={{ width: "5rem" }}
-                                    alt="Twitter Icon"
-                                    src={Twitter}
-                                    mr="3rem"
-                                />
-                                <Box
-                                    component="img"
-                                    sx={{ width: "5rem" }}
-                                    alt="Instagram"
-                                    src={Instagram}
-                                />
-                            </Stack>
-                        </Stack>
-                        <Stack
-                            direction="row"
-                            alignItems="center"
-                            columnGap="15rem"
-                        >
-                            {footer.map((item) => (
-                                <Stack>
-                                    <Typography
-                                        color="#40434A"
-                                        fontSize={["2rem"]}
-                                        fontWeight="700"
-                                        pb="3rem"
-                                    >
-                                        {item.name}
-                                    </Typography>
-                                    {item.subLink.map((link) => (
-                                        <Typography
-                                            color="#70737C"
-                                            fontSize={["1.8rem"]}
-                                            pb="2.4rem"
-                                        >
-                                            {link}
-                                        </Typography>
-                                    ))}
-                                </Stack>
-                            ))}
-                        </Stack>
-                    </Stack>
-                </Container>
-            </Box>
+            <Footer />
         </>
     );
 }

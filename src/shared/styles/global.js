@@ -11,6 +11,7 @@ export const globalStyles = (
                 font-size: 1.6rem;
                 font-weight: 400;
                 color: #000;
+                background-color: #fafafa !important;
             }
         `}
     />

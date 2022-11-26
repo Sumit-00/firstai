@@ -1,12 +1,16 @@
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
-import { Stack } from "@mui/material";
-import Box from "@mui/material/Box";
+
+import {
+    Stack,
+    Box,
+    Container,
+    Button,
+    Typography,
+    Toolbar,
+    Grid,
+} from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
 import DemoImage from "../../Images/demo.svg";
 import Meta from "../../Images/meta.svg";
 import Adwords from "../../Images/adwords.svg";
@@ -17,10 +21,8 @@ import Cart from "../../Images/cart.svg";
 import Install from "../../Images/install.svg";
 import Saas from "../../Images/saas.svg";
 import Building from "../../Images/building.svg";
-import FbIcon from "../../Images/fb.svg";
-import Twitter from "../../Images/twitter.svg";
-import Instagram from "../../Images/instagram.svg";
-import Grid from "@mui/material/Grid";
+
+import Footer from "../../Components/Footer";
 
 const pages = ["Products", "Pricing", "Resources", "Contact Us"];
 
@@ -75,17 +77,16 @@ const secretWeapon = [
     },
 ];
 
-const footer = [
-    { name: "Services", subLink: ["Logo", "UI/UX", "Packaging", "Request"] },
-    { name: "Contact", subLink: ["About Us", "Teams", "Profile", "FAQ"] },
-    {
-        name: "Legals",
-        subLink: ["Privacy", "Disclaimer", "Terms", "Company"],
-    },
-];
-
 const HomePage = () => {
     const navigate = useNavigate();
+    const handleNavClick = (link) => {
+        if (link === "Contact Us") {
+            navigate("/contact-us");
+        }
+        if (link === "Pricing") {
+            navigate("/pricing");
+        }
+    };
     return (
         <>
             <AppBar
@@ -119,6 +120,7 @@ const HomePage = () => {
                             {pages.map((page) => (
                                 <Button
                                     key={page}
+                                    onClick={() => handleNavClick(page)}
                                     sx={{
                                         my: 2,
                                         color: "white",
@@ -140,14 +142,16 @@ const HomePage = () => {
                                     bgcolor: "#fff",
                                     color: "#000",
                                     p: "1rem 4rem",
+                                    border: "1px solid #fff",
                                     "&.MuiButton-root": {
                                         fontWeight: 900,
                                         borderRadius: "3rem",
+                                        boxShadow: "none",
                                     },
-                                    transition: "0.5s ease-in",
                                     "&:hover": {
-                                        bgcolor: "#fff",
-                                        opacity: 0.8,
+                                        color: "#fff",
+                                        bgcolor: "transparent",
+                                        border: "1px solid #fff",
                                     },
                                 }}
                             >
@@ -202,13 +206,18 @@ const HomePage = () => {
                                     Try for Free
                                 </Typography>
                                 <Button
+                                    onClick={() => navigate("/contact-us")}
                                     sx={{
                                         bgcolor: "#fff",
                                         color: "#000",
                                         p: "1rem 4rem",
+                                        border: "1px solid #fff",
                                         "&.MuiButton-root": {
                                             fontWeight: 700,
                                             borderRadius: "3rem",
+                                        },
+                                        "&:hover": {
+                                            color: "#fff",
                                         },
                                     }}
                                 >
@@ -241,7 +250,7 @@ const HomePage = () => {
                         </Typography>
                         <Stack
                             direction="row"
-                            alignItems="center"
+                            alignItems="stretch"
                             justifyContent="space-evenly"
                         >
                             {platforms.map((item) => (
@@ -343,13 +352,20 @@ const HomePage = () => {
                                 pt="3rem"
                             >
                                 <Button
+                                    onClick={() => navigate("/contact-us")}
                                     sx={{
                                         bgcolor: "#B165E9",
                                         color: "#fff",
                                         p: "1rem 4rem",
+                                        border: "1px solid #fff",
                                         "&.MuiButton-root": {
                                             fontWeight: 700,
                                             borderRadius: "3rem",
+                                        },
+                                        "&:hover": {
+                                            color: "#000",
+                                            border: "1px solid #B165E9",
+                                            bgcolor: "transparent",
                                         },
                                     }}
                                 >
@@ -369,7 +385,7 @@ const HomePage = () => {
                 </Container>
             </Box>
             <Box bgcolor="#EFF0F6" p="6rem 0">
-                <Container maxWidth="xl">
+                <Container maxWidth="xl" sx={{ paddingBottom: "5rem" }}>
                     <Stack>
                         <Typography
                             color="#27292E"
@@ -441,87 +457,37 @@ const HomePage = () => {
                             thought and rutinity in our blog that updated <br />
                             weekly. We will not spam you, we promise.
                         </Typography>
-                    </Stack>
-                </Container>
-            </Box>
-            <Box sx={{ bgcolor: "#EFF0F6", pb: "6rem", pt: "6rem" }}>
-                <Container maxWidth="xl">
-                    <Stack
-                        direction="row"
-                        alignItems="center"
-                        justifyContent="space-between"
-                    >
-                        <Stack>
-                            <Typography
-                                fontSize={["3.6rem"]}
-                                sx={{
-                                    color: "#191D38",
-                                    display: { xs: "none", md: "flex" },
-                                    fontWeight: 900,
-                                    textDecoration: "none",
-                                    pb: "6rem",
-                                }}
-                            >
-                                First Ai
-                            </Typography>
-                            <Typography
-                                pb="4rem"
-                                color="#585C65"
-                                fontSize={["2rem"]}
-                            >
-                                First AI is a smart result driven AI engine
-                                <br /> that helps to grow your investments on
-                                Ads. <br />
-                                First AI is all about optimization of Ads every
-                                <br />
-                                minute of every day making them reap benefits.
-                            </Typography>
-                            <Stack direction="row" alignItems="center">
-                                <Box
-                                    component="img"
-                                    sx={{ width: "5rem" }}
-                                    alt="FB icon"
-                                    src={FbIcon}
-                                    mr="3rem"
-                                />
-                                <Box
-                                    component="img"
-                                    sx={{ width: "5rem" }}
-                                    alt="Instagram"
-                                    src={Instagram}
-                                />
-                            </Stack>
-                        </Stack>
                         <Stack
                             direction="row"
                             alignItems="center"
-                            columnGap="15rem"
+                            pt="3rem"
+                            justifyContent="center"
                         >
-                            {footer.map((item) => (
-                                <Stack>
-                                    <Typography
-                                        color="#40434A"
-                                        fontSize={["2rem"]}
-                                        fontWeight="700"
-                                        pb="3rem"
-                                    >
-                                        {item.name}
-                                    </Typography>
-                                    {item.subLink.map((link) => (
-                                        <Typography
-                                            color="#70737C"
-                                            fontSize={["1.8rem"]}
-                                            pb="2.4rem"
-                                        >
-                                            {link}
-                                        </Typography>
-                                    ))}
-                                </Stack>
-                            ))}
+                            <Button
+                                onClick={() => navigate("/contact-us")}
+                                sx={{
+                                    bgcolor: "#B165E9",
+                                    color: "#fff",
+                                    p: "1rem 4rem",
+                                    border: "1px solid #fff",
+                                    "&.MuiButton-root": {
+                                        fontWeight: 700,
+                                        borderRadius: "3rem",
+                                    },
+                                    "&:hover": {
+                                        color: "#000",
+                                        border: "1px solid #B165E9",
+                                        bgcolor: "transparent",
+                                    },
+                                }}
+                            >
+                                Book a Demo
+                            </Button>
                         </Stack>
                     </Stack>
                 </Container>
             </Box>
+            <Footer />
         </>
     );
 };
