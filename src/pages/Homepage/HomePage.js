@@ -1,5 +1,4 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
 
 import {
     Stack,
@@ -24,7 +23,7 @@ import Building from "../../Images/building.svg";
 
 import Footer from "../../Components/Footer";
 
-const pages = ["Products", "Pricing", "Resources", "Contact Us"];
+import Header from "../../Components/Header";
 
 const platforms = [
     {
@@ -79,88 +78,10 @@ const secretWeapon = [
 
 const HomePage = () => {
     const navigate = useNavigate();
-    const handleNavClick = (link) => {
-        if (link === "Contact Us") {
-            navigate("/contact-us");
-        }
-        if (link === "Pricing") {
-            navigate("/pricing");
-        }
-    };
+
     return (
         <>
-            <AppBar
-                position="static"
-                sx={{ bgcolor: "#b165e9", pt: "3.2rem", pb: "6rem" }}
-            >
-                <Container maxWidth="xl">
-                    <Toolbar disableGutters>
-                        <Typography
-                            variant="h6"
-                            noWrap
-                            component="a"
-                            href="/"
-                            fontSize={["3.6rem"]}
-                            sx={{
-                                mr: "7rem",
-                                color: "#fff",
-                                display: { xs: "none", md: "flex" },
-                                fontWeight: 900,
-                                textDecoration: "none",
-                            }}
-                        >
-                            First Ai
-                        </Typography>
-                        <Box
-                            sx={{
-                                flexGrow: 1,
-                                display: { xs: "none", md: "flex" },
-                            }}
-                        >
-                            {pages.map((page) => (
-                                <Button
-                                    key={page}
-                                    onClick={() => handleNavClick(page)}
-                                    sx={{
-                                        my: 2,
-                                        color: "white",
-                                        display: "block",
-                                        fontWeight: 700,
-                                        fontSize: "1.8rem",
-                                        mr: "4rem",
-                                    }}
-                                >
-                                    {page}
-                                </Button>
-                            ))}
-                        </Box>
-                        <Stack direction="row" alignItems="center" spacing={1}>
-                            <Button
-                                onClick={() => navigate("/contact-us")}
-                                variant="contained"
-                                sx={{
-                                    bgcolor: "#fff",
-                                    color: "#000",
-                                    p: "1rem 4rem",
-                                    border: "1px solid #fff",
-                                    "&.MuiButton-root": {
-                                        fontWeight: 900,
-                                        borderRadius: "3rem",
-                                        boxShadow: "none",
-                                    },
-                                    "&:hover": {
-                                        color: "#fff",
-                                        bgcolor: "transparent",
-                                        border: "1px solid #fff",
-                                    },
-                                }}
-                            >
-                                Get Early Access
-                            </Button>
-                        </Stack>
-                    </Toolbar>
-                </Container>
-            </AppBar>
+            <Header bgcolor="#b165e9" route="home" />
             <Box sx={{ bgcolor: "#b165e9", pb: "6rem" }}>
                 <Container maxWidth="xl">
                     <Stack

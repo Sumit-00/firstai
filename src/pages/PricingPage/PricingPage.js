@@ -1,12 +1,9 @@
 import React from "react";
 import {
-    AppBar,
     Container,
     Stack,
     Typography,
     Box,
-    Toolbar,
-    Button,
     Accordion,
     AccordionSummary,
     AccordionDetails,
@@ -17,9 +14,8 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import Footer from "../../Components/Footer";
 
+import Header from "../../Components/Header";
 import { styled } from "@mui/material/styles";
-
-const pages = ["Products", "Pricing", "Resources", "Contact Us"];
 
 const accordionDetails = [
     {
@@ -158,56 +154,7 @@ function PricingPage() {
     };
     return (
         <>
-            <AppBar
-                position="static"
-                sx={{ bgcolor: "#EFF0F6", pt: "3.2rem", pb: "6rem" }}
-            >
-                <Container maxWidth="xl">
-                    <Toolbar disableGutters>
-                        <Typography
-                            variant="h6"
-                            noWrap
-                            component="a"
-                            href="/"
-                            fontSize={["3.6rem"]}
-                            sx={{
-                                mr: "7rem",
-                                color: "#000",
-                                display: { xs: "none", md: "flex" },
-                                fontWeight: 900,
-                                textDecoration: "none",
-                            }}
-                        >
-                            First Ai
-                        </Typography>
-                        <Box
-                            sx={{
-                                flexGrow: 1,
-                                display: { xs: "none", md: "flex" },
-                            }}
-                        >
-                            {pages.map((page) => (
-                                <Button
-                                    key={page}
-                                    sx={{
-                                        my: 2,
-                                        color: "#000",
-                                        display: "block",
-                                        fontWeight: 700,
-                                        fontSize: "1.8rem",
-                                        mr: "4rem",
-                                        "&:hover": {
-                                            bgcolor: "transparent",
-                                        },
-                                    }}
-                                >
-                                    {page}
-                                </Button>
-                            ))}
-                        </Box>
-                    </Toolbar>
-                </Container>
-            </AppBar>
+            <Header bgcolor="#EFF0F6" color="#000" />
             <Box sx={{ bgcolor: "#EFF0F6", pt: "3.2rem", pb: "6rem" }}>
                 <Container maxWidth="xl">
                     <Typography

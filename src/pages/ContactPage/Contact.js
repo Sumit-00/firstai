@@ -1,10 +1,8 @@
 /* eslint-disable no-useless-escape */
 
 import React from "react";
-import AppBar from "@mui/material/AppBar";
 import { Stack } from "@mui/material";
 import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
@@ -13,7 +11,7 @@ import "./style.css";
 
 import Footer from "../../Components/Footer";
 
-const pages = ["Products", "Pricing", "Resources", "Contact Us"];
+import Header from "../../Components/Header";
 
 const validEmailRegex = RegExp(
     /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
@@ -55,53 +53,7 @@ function Contact() {
 
     return (
         <>
-            <AppBar
-                position="static"
-                sx={{ bgcolor: "#EFF0F6", pt: "3.2rem", pb: "6rem" }}
-            >
-                <Container maxWidth="xl">
-                    <Toolbar disableGutters>
-                        <Typography
-                            variant="h6"
-                            noWrap
-                            component="a"
-                            href="/"
-                            fontSize={["3.6rem"]}
-                            sx={{
-                                mr: "7rem",
-                                color: "#000",
-                                display: { xs: "none", md: "flex" },
-                                fontWeight: 900,
-                                textDecoration: "none",
-                            }}
-                        >
-                            First Ai
-                        </Typography>
-                        <Box
-                            sx={{
-                                flexGrow: 1,
-                                display: { xs: "none", md: "flex" },
-                            }}
-                        >
-                            {pages.map((page) => (
-                                <Button
-                                    key={page}
-                                    sx={{
-                                        my: 2,
-                                        color: "#000",
-                                        display: "block",
-                                        fontWeight: 700,
-                                        fontSize: "1.8rem",
-                                        mr: "4rem",
-                                    }}
-                                >
-                                    {page}
-                                </Button>
-                            ))}
-                        </Box>
-                    </Toolbar>
-                </Container>
-            </AppBar>
+            <Header bgcolor="#EFF0F6" color="#000" />
             <Box sx={{ bgcolor: "#EFF0F6", pt: "3.2rem", pb: "6rem" }}>
                 <Container maxWidth="xl">
                     <Typography
